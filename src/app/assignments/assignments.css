@@ -1,0 +1,44 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+}
+
+.container {
+  display: flex;
+  margin: 5px;
+  flex-direction: column;
+}
+
+.ajtbtn {
+  align-self: flex-end;
+}
+
+.pagination-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 5px;
+  gap: 15px;
+}
+
+.pagination-info {
+  text-align: center;
+}
+
+.pagination-info p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.pagination-controls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pagination-controls button {
+  min-width: 120px;
+}

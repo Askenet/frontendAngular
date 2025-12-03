@@ -1,0 +1,80 @@
+/* Layout principal */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Toolbar */
+.toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: #1976d2;
+  color: white;
+  height: 64px;
+}
+
+.toolbar-spacer {
+  flex: 1 1 auto;
+}
+
+/* Sidenav Container */
+.sidenav-container {
+  position: absolute;
+  top: 64px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fafafa;
+}
+
+/* Sidebar */
+.sidenav {
+  width: 280px;
+  background-color: white;
+  box-shadow: 3px 0 6px rgba(0, 0, 0, 0.24);
+}
+
+.sidenav mat-nav-list {
+  padding-top: 0px;
+}
+
+.sidenav h3[matSubheader] {
+  color: #1976d2;
+  font-weight: 500;
+  margin: 16px 0 8px 0;
+}
+
+.sidenav mat-list-item {
+  height: 48px;
+  margin-top: 10px;
+}
+
+.sidenav mat-list-item a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.sidenav mat-list-item:hover {
+  background-color: rgba(25, 118, 210, 0.04);
+}
+
+/* Main Content */
+.main-content {
+  background-color: #fafafa;
+}
+
+.content-padding {
+  padding: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sidenav {
+    width: 100vw;
+  }
+}

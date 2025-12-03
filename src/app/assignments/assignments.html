@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="ajouterBtn">
+    <a routerLink="/add" mat-flat-button color="accent" class="ajouterBtn">
+      Ajouter un assignment
+    </a>
+  </div>
+</div>
+
+<mat-list>
+  @for(assignment of assignments; track assignment.nom) {
+  <nav>
+    <a routerLink="/assignments/{{ assignment.id }}">
+      <h3 mat-subheader>{{ assignment.dateDeRendu | date : 'dd/MM/yyyy' }}</h3>
+      <mat-list-item (click)="assignmentClique(assignment)">
+        <p [appRendu]="assignment.rendu">
+          @if (assignment.rendu) { Le devoir {{ assignment.nom }} est rendu le
+          {{ assignment.dateDeRendu | date : 'dd/MM/yyyy' }}
+          } @else { Le devoir {{ assignment.nom }} doit être rendu le
+          {{ assignment.dateDeRendu | date : 'dd/MM/yyyy' }}
+          }
+        </p>
+      </mat-list-item>
+    </a>
+  </nav>
+  }
+</mat-list>
+
+<div class="pagination-container">
+  <div class="pagination-info">
+    <p>Page {{ page }} sur {{ totalPages }}</p>
+    <p>Total de documents : {{ totalDocs }}</p>
+  </div>
+
+  <div class="pagination-controls">
+    <button mat-raised-button color="primary" (click)="goToFirstPage()" [disabled]="!hasPrevPage">
+      Première page
+    </button>
+
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="goToPreviousPage()"
+      [disabled]="!hasPrevPage"
+    >
+      Page précédente
+    </button>
+
+    <button mat-raised-button color="primary" (click)="goToNextPage()" [disabled]="!hasNextPage">
+      Page suivante
+    </button>
+
+    <button mat-raised-button color="primary" (click)="goToLastPage()" [disabled]="!hasNextPage">
+      Dernière page
+    </button>
+  </div>
+</div>

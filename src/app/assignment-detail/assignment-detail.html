@@ -1,0 +1,39 @@
+@if (assignmentTransmis) {
+<mat-card appearance="outlined">
+  <mat-card-header>
+    <mat-card-title>Détails de l'assignment</mat-card-title>
+    <mat-card-subtitle>On pourra ajouter image etc.</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <p>
+      Cet assignment a pour nom : <strong>{{ assignmentTransmis.nom }}</strong> <br />
+      et pour date de rendu :
+      <strong>{{ assignmentTransmis.dateDeRendu | date : 'dd/MM/yyyy' }}</strong> <br />
+      Blah Blah Blah......
+    </p>
+  </mat-card-content>
+
+  <mat-card-actions>
+    @if(!assignmentTransmis.rendu) {
+    <mat-checkbox (click)="onAssignmentRendu()">Rendu</mat-checkbox>
+    }
+    <button mat-flat-button color="primary" class="supbtn" (click)="onClickEdit()">Modifier</button>
+    <button
+      mat-flat-button
+      color="accent"
+      class="supbtn"
+      (click)="onDeleteAssignment()"
+      [disabled]="!isAdmin()"
+    >
+      Supprimer
+    </button>
+  </mat-card-actions>
+</mat-card>
+} @else {
+<mat-card appearance="outlined">
+  <mat-card-content>
+    <p>Aucun assignment sélectionné</p>
+  </mat-card-content>
+</mat-card>
+}
